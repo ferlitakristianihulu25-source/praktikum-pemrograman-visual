@@ -1,0 +1,883 @@
+## 📖 Daftar Isi Praktikum
+
+- [📘 Pertemuan 1 - Pengenalan Visual Programming](#-pertemuan-1---pengenalan-visual-programming)
+  - [Apa itu Visual Programming?](#-apa-itu-visual-programming)
+  - [Karakteristik Utama](#-karakteristik-utama-pemrograman-visual)
+  - [Manfaat & Keterbatasan](#-manfaat--keterbatasan)
+  - [Platform Populer](#️-platform-pemrograman-visual-yang-populer)
+  - [Software & Panduan Instalasi](#-lingkungan-kerja--software-praktikum)
+- [📙 Pertemuan 2 - Komponen Visual & Event Handling](#-pertemuan-2---komponen-visual--event-handling)
+  - [Konsep Dasar Form & Komponen](#-konsep-dasar-komponen-visual--form)
+  - [Event & Event-Driven Programming](#-event--event-driven-programming)
+  - [Komponen Utama yang Digunakan](#-komponen-utama-yang-digunakan)
+  - [Implementasi Kode Program (`Form1.vb`)](#-implementasi-kode-program-form1vb)
+  - [Penjelasan Logika & Sintaksis](#-penjelasan-logika--sintaksis)
+  - [Alur Pengujian Aplikasi](#-alur-pengujian-aplikasi)
+- [📕 Pertemuan 3 - Operator dan Percabangan](#-pertemuan-3---operator-dan-percabangan)
+  - [Konsep Operator & Struktur Percabangan](#-konsep-operator--struktur-percabangan)
+  - [Validasi Input & KeyPress Event](#-validasi-input--keypress-event)
+  - [Implementasi Kode Program (`Form1.vb`)](#-implementasi-kode-program-pertemuan-3-form1vb)
+  - [Penjelasan Logika Percabangan](#-penjelasan-logika-percabangan)
+  - [Alur Pengujian Aplikasi Pertemuan 3](#-alur-pengujian-aplikasi-pertemuan-3)
+- [📗 Pertemuan 4 - Struktur Perulangan (Looping)](#-pertemuan-4---struktur-perulangan-looping)
+  - [Konsep Dasar Struktur Perulangan](#-konsep-dasar-struktur-perulangan)
+  - [Komponen Visual yang Digunakan](#-komponen-visual-yang-digunakan-pertemuan-4)
+  - [Validasi Input & KeyPress Event](#-validasi-input--keypress-event-pertemuan-4)
+  - [Implementasi Kode Program (`frmPerulangan.vb`)](#-implementasi-kode-program-frmperulanganvb)
+  - [Penjelasan Logika Perulangan For...Next & Step](#-penjelasan-logika-perulangan-fornext--step)
+  - [Alur Pengujian Aplikasi Pertemuan 4](#-alur-pengujian-aplikasi-pertemuan-4)
+- [📒 Pertemuan 5 - Array dan Modul (Module)](#-pertemuan-5---array-dan-modul-module)
+  - [Konsep Dasar Module, Sub, dan Function](#-konsep-dasar-module-sub-dan-function)
+  - [Konsep Array 1 Dimensi & 2 Dimensi](#-konsep-array-1-dimensi--2-dimensi)
+  - [Komponen Visual yang Digunakan](#-komponen-visual-yang-digunakan-pertemuan-5)
+  - [Implementasi Kode Program](#-implementasi-kode-program-pertemuan-5)
+  - [Penjelasan Logika & Pemanggilan Data](#-penjelasan-logika--pemanggilan-data)
+  - [Alur Pengujian Aplikasi Pertemuan 5](#-alur-pengujian-aplikasi-pertemuan-5)
+- [🗄️ Pertemuan 6 - Koneksi Database PostgreSQL (Supabase) & CRUD Dasar](#️-pertemuan-6---koneksi-database-postgresql-supabase--crud-dasar)
+  - [Konsep Arsitektur Modular Database](#-konsep-arsitektur-modular-database)
+  - [Manajemen Konfigurasi & Keamanan Kredensial](#-manajemen-konfigurasi--keamanan-kredensial)
+  - [Komponen Visual yang Digunakan](#-komponen-visual-yang-digunakan-pertemuan-6)
+  - [Implementasi Kode Program](#-implementasi-kode-program-pertemuan-6)
+  - [Penjelasan Alur Kerja Query & Eksekusi Data](#-penjelasan-alur-kerja-query--eksekusi-data)
+  - [Alur Pengujian Aplikasi Pertemuan 6](#-alur-pengujian-aplikasi-pertemuan-6)
+
+---
+
+# 📘 Pertemuan 1 - Pengenalan Visual Programming
+
+## 💡 Apa itu Visual Programming?
+
+**Pemrograman Visual (*Visual Programming*)** adalah paradigma pengembangan perangkat lunak yang memungkinkan pemrogram membuat aplikasi menggunakan elemen grafis, blok logika, serta antarmuka visual dibanding sekadar menulis sintaksis kode berbasis teks secara manual.
+
+Dengan pendekatan ini, struktur program, tata letak antarmuka (*UI*), dan aliran logika dapat dirancang secara intuitif melalui manipulasi langsung (*direct manipulation*) pada kanvas desain.
+
+---
+
+## ⚙️ Karakteristik Utama Pemrograman Visual
+
+1. **Abstraksi Berbasis Grafis**  
+   Logika dan aliran eksekusi program diwakili oleh komponen visual, diagram alir, atau blok pembangun yang saling terhubung.
+   
+2. **Antarmuka Drag-and-Drop**  
+   Elemen antarmuka pengguna (*User Interface*) seperti tombol, tabel, teks input, dan kontrol lainnya ditempatkan ke dalam form dengan cara digeser dan dilepas (*drag-and-drop*).
+
+3. **Prinsip WYSIWYG (*What You See Is What You Get*)**  
+   Tampilan aplikasi saat dirancang pada *designer window* akan sama persis dengan hasil akhir saat aplikasi dijalankan.
+
+4. **Arsitektur Berorientasi Kejadian (*Event-Driven*)**  
+   Alur kerja aplikasi berpusat pada aksi atau kejadian (*event*) yang dilakukan pengguna, seperti dikliknya tombol, pergerakan mouse, atau penekanan tombol keyboard.
+
+---
+
+## 🎯 Manfaat & Keterbatasan
+
+### Keunggulan
+* **Kemudahan Pembelajaran**: Mempercepat pemahaman alur pemrograman bagi pemula tanpa terhambat oleh kesalahan sintaksis (*syntax error*).
+* **Pengembangan Cepat (*Rapid Application Development*)**: Mempercepat pembuatan prototipe dan antarmuka aplikasi desktop secara visual.
+* **Struktur Tervisualisasi**: Memudahkan pelacakan logika dan tata letak komponen secara langsung.
+* **Meminimalisir Kesalahan Penulisan**: Mengurangi risiko *typo* pada nama variabel atau fungsi bawaan antarmuka.
+
+### Keterbatasan
+* **Fleksibilitas Terbatas**: Kurang fleksibel jika dibandingkan dengan pemrograman teks *low-level* untuk algoritma yang sangat kompleks.
+* **Performa & Overhead**: Beberapa platform visual memerlukan *runtime environment* yang membutuhkan konsumsi memori lebih besar.
+* **Skalabilitas**: Kurang efisien apabila digunakan untuk membangun proyek sistem berskala sangat besar (*enterprise level*).
+
+---
+
+## 🛠️ Platform Pemrograman Visual yang Populer
+
+| Platform / Tool | Lingkup Penggunaan & Keterangan |
+| :--- | :--- |
+| **Scratch** | Lingkungan belajar berbasis blok visual yang ideal untuk pemula dan pemahaman logika dasar. |
+| **MIT App Inventor** | Platform pembuatan aplikasi mobile (Android/iOS) menggunakan blok logika visual berbasis web. |
+| **Microsoft Visual Basic (.NET)** | Lingkungan IDE profesional berbasis komponen GUI visual yang digunakan dalam perkuliahan. |
+| **JavaFX / Scene Builder** | Framework perancangan GUI interaktif berbasis drag-and-drop untuk ekosistem Java. |
+| **Node-RED** | Tools visual programming berorientasi *flow-based* untuk integrasi perangkat IoT dan API. |
+
+---
+
+## 💻 Lingkungan Kerja & Software Praktikum
+
+Dalam kegiatan praktikum perkuliahan **Pemrograman Visual**, software utama yang digunakan adalah **Microsoft Visual Studio** dengan bahasa **Visual Basic (.NET Framework)**. 
+
+Visual Studio menyediakan *Form Designer* berbasis visual yang memudahkan perancangan antarmuka aplikasi Windows Desktop berbasis *Event-Driven*.
+
+---
+
+## 📥 Panduan Instalasi Visual Studio
+
+Berikut adalah langkah-langkah pemasangan perangkat lunak untuk praktikum:
+
+1. **Unduh Installer Official**  
+   Kunjungi situs resmi Microsoft Visual Studio di [visualstudio.microsoft.com](https://visualstudio.microsoft.com/) dan pilih tombol **Download Visual Studio**.
+
+2. **Pilih Edisi Community**  
+   Pilih varian **Visual Studio Community** (disarankan versi **2022** atau edisi stabil terbaru). Edisi ini bersifat gratis untuk penggunaan edukasi dan individu.
+
+3. **Konfigurasi Workload (.NET Desktop Development)**  
+   Setelah *Visual Studio Installer* terbuka, centang pada bagian **.NET Desktop Development** (Pengembangan Desktop .NET). Workload ini mencakup library Visual Basic, Windows Forms Designer, dan .NET SDK.
+
+4. **Penyesuaian Component**  
+   Pada tab *Installation Details*, pastikan opsi penunjang seperti *.NET Framework Development Tools* dan *Visual Basic Core* sudah tercentang.
+
+5. **Proses Pemasangan**  
+   Klik **Install / Modify** dan berikan izin (*administrator allowance*). Tunggu hingga proses pengunduhan serta pemasangan selesai hingga muncul status **"All installations are up to date"**.
+
+6. **Uji Coba Pertama**  
+   Buka Visual Studio, pilih **Create a new project**, lalu cari template **Windows Forms App (.NET Framework)** menggunakan bahasa **Visual Basic**.
+
+---
+
+# 📙 Pertemuan 2 - Komponen Visual & Event Handling
+
+Dokumentasi praktikum **Pertemuan 2** berfokus pada pengenalan **Komponen Visual (Controls)**, manipulasi **Properties**, serta penerapan **Event Handling** dasar menggunakan bahasa **Visual Basic (.NET Framework)** di Microsoft Visual Studio.
+
+---
+
+## 💡 Konsep Dasar Komponen Visual & Form
+
+Pada lingkungan **Windows Forms (WinForms)**, antarmuka pengguna dibangun di atas sebuah jendela yang disebut **Form** dengan menempatkan berbagai komponen GUI visual di atasnya:
+
+1. **Form (`System.Windows.Forms.Form`)**  
+   Kontainer utama tempat seluruh elemen antarmuka (*UI*) diletakkan dan berinteraksi.
+2. **Komponen Visual (*Controls*)**  
+   Elemen grafis interaktif seperti tombol, kotak input teks, label, dan checkbox yang digunakan pengguna untuk berinteraksi dengan aplikasi.
+3. **Properties (Atribut)**  
+   Karakteristik dari sebuah komponen yang menentukan nama variabel, tampilan visual, posisi, hingga perilakunya. Properti dapat diatur melalui jendela **Properties (F4)** saat *design time* maupun secara terprogram (*run time*).
+
+---
+
+## ⚙️ Event & Event-Driven Programming
+
+Aplikasi GUI modern bekerja berbasis **Event-Driven Programming**, di mana alur program dijalankan saat terjadi peristiwa (*event*) tertentu:
+
+* **Event**: Aksi yang dihasilkan dari interaksi pengguna (misalnya mengklik tombol `Click`, mengubah isi teks `TextChanged`) atau dari sistem (misalnya saat form dimuat `Load`).
+* **Event Handler**: Sub-prosedur khusus dalam kode yang merespons event tersebut. Dalam Visual Basic, event handler ditandai dengan sintaks `Handles <NamaKomponen>.<NamaEvent>`.
+
+---
+
+## 🛠️ Komponen Utama yang Digunakan
+
+Pada praktikum Pertemuan 2 ini, digunakan 3 jenis komponen dasar Windows Forms:
+
+| Komponen | Nama Variabel (*Design Name*) | Fungsi & Peranan |
+| :--- | :--- | :--- |
+| **Label** | `Label1`, `Label2`, `Label3` | Menampilkan teks statis sebagai petunjuk input (*Nama*, *NIM*, *KOM*). |
+| **TextBox** | `nama`, `nim`, `kom` | Kotak input interaktif untuk menerima data teks dari pengguna. |
+| **Button** | `tampilkan`, `hapus`, `keluar` | Tombol aksi untuk memicu fungsi eksekusi program (*Tampilkan*, *Hapus*, *Keluar*). |
+
+---
+
+## 📝 Implementasi Kode Program (`Form1.vb`)
+
+Berikut adalah kode sumber (*source code*) lengkap yang diimplementasikan pada `Form1.vb`:
+
+```vb
+Public Class Form1
+    Private Sub Label2_Click(sender As Object, e As EventArgs) Handles Label2.Click
+
+    End Sub
+
+    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
+
+    Private Sub tampilkan_Click(sender As Object, e As EventArgs) Handles tampilkan.Click
+        MessageBox.Show("Hello!" & vbCrLf &
+            "Nama: " & nama.Text & vbCrLf &
+            "NIM: " & nim.Text & vbCrLf &
+            "KOM : " & kom.Text
+        )
+    End Sub
+
+    Private Sub hapus_Click(sender As Object, e As EventArgs) Handles hapus.Click
+        nama.Clear()
+        nim.Clear()
+        kom.Clear()
+    End Sub
+
+    Private Sub keluar_Click(sender As Object, e As EventArgs) Handles keluar.Click
+        Me.Close()
+    End Sub
+End Class
+```
+
+---
+
+## 🔍 Penjelasan Logika & Sintaksis
+
+### 1. Menampilkan Pesan (`tampilkan_Click`)
+```vb
+MessageBox.Show("Hello!" & vbCrLf &
+    "Nama: " & nama.Text & vbCrLf &
+    "NIM: " & nim.Text & vbCrLf &
+    "KOM : " & kom.Text
+)
+```
+* **`MessageBox.Show()`**: Menampilkan kotak dialog modal (*pop-up*) berisi pesan konfirmasi/informasi.
+* **Operator `&`**: Digunakan untuk menggabungkan (*string concatenation*) antara teks string statis dengan nilai input dari properti `.Text` komponen `TextBox`.
+* **`vbCrLf`**: Konstanta bawaan Visual Basic (*Carriage Return + Line Feed*) untuk membuat baris baru pada string.
+
+### 2. Mengosongkan Input (`hapus_Click`)
+```vb
+nama.Clear()
+nim.Clear()
+kom.Clear()
+```
+* **`nama.Clear()`**: Method bawaan pada kontrol `TextBox` yang berfungsi untuk menghapus seluruh teks di dalam kotak input `nama`, `nim`, dan `kom` secara bersamaan.
+
+### 3. Menutup Form (`keluar_Click`)
+```vb
+Me.Close()
+```
+* **`Me.Close()`**: Keyword `Me` merepresentasikan instance form aktif saat ini (`Form1`), dan method `.Close()` dipanggil untuk menutup form serta menghentikan jalannya aplikasi.
+
+---
+
+## 🚀 Alur Pengujian Aplikasi
+
+1. **Jalankan Aplikasi**: Tekan `F5` atau tombol **Start** pada Visual Studio.
+2. **Input Data**: Isikan data pada kotak teks `Nama`, `NIM`, dan `KOM`.
+3. **Uji Tombol Tampilkan**: Klik tombol **Tampilkan**, aplikasi akan mengeluarkan *Message Box* dialog yang menampilkan data gabungan yang diinputkan.
+4. **Uji Tombol Hapus**: Klik tombol **Hapus**, seluruh isian pada ketiga `TextBox` akan dibersihkan (*cleared*).
+5. **Uji Tombol Keluar**: Klik tombol **Keluar**, form akan ditutup secara aman.
+
+---
+
+# 📕 Pertemuan 3 - Operator dan Percabangan
+
+## 💡 Konsep Operator & Struktur Percabangan
+
+Pada pertemuan ini, dipelajari mengenai penggunaan **operator** (aritmatika, perbandingan, logika) dan **struktur kendali percabangan** (*Conditional Statements*) menggunakan `If...Then...ElseIf...Else...End If` dalam Visual Basic .NET.
+
+Percabangan memungkinkan program mengambil keputusan dan mengeksekusi blok instruksi yang berbeda sesuai dengan kondisi atau kriteria nilai yang terpenuhi.
+
+---
+
+## 🛡️ Validasi Input & KeyPress Event
+
+Untuk menjaga integritas data input:
+- Event `txtNilai_KeyPress` digunakan agar pengguna hanya dapat memasukkan karakter angka (*digits*) dan tombol kontrol (seperti Backspace).
+- `Integer.TryParse` digunakan untuk memvalidasi apakah teks input benar-benar numerik.
+- Pengecekan rentang nilai (*range validation*) memastikan nilai yang dimasukkan berada pada batas **0 - 100**.
+
+---
+
+## 💻 Implementasi Kode Program Pertemuan 3 (`Form1.vb`)
+
+```vb
+Imports System.Net.Mime.MediaTypeNames
+Imports System.Drawing
+
+Public Class Form1
+    Private Sub btnInput_Click(sender As Object, e As EventArgs) Handles btnInput.Click
+        Dim nilai As Integer
+
+        If Not Integer.TryParse(txtNilai.Text, nilai) Then
+            MessageBox.Show("Masukan dalam bentuk angka")
+            txtNilai.Focus()
+            Return
+        End If
+
+        If nilai < 0 OrElse nilai > 100 Then
+            MessageBox.Show("Masukan Nilai 0 sampai 100")
+            txtNilai.Focus()
+            Return
+        End If
+
+        If nilai <= 50 Then
+            picImage.Image = System.Drawing.Image.FromFile("Assets\tsukasa-dance.gif")
+        ElseIf nilai <= 70 Then
+            picImage.Image = System.Drawing.Image.FromFile("Assets\img1.png")
+        Else
+            picImage.Image = System.Drawing.Image.FromFile("Assets\img2.png")
+        End If
+    End Sub
+
+    Private Sub txtNilai_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtNilai.KeyPress
+        If Not Char.IsControl(e.KeyChar) AndAlso Not Char.IsDigit(e.KeyChar) Then
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub picImage_Click(sender As Object, e As EventArgs) Handles picImage.Click
+
+    End Sub
+End Class
+```
+
+---
+
+## 🔍 Penjelasan Logika Percabangan
+
+| Rentang Nilai | Kondisi Percabangan | Output Gambar / Aksi |
+| :--- | :--- | :--- |
+| `Nilai < 0` atau `Nilai > 100` | `nilai < 0 OrElse nilai > 100` | Menampilkan MessageBox peringatan `Masukan Nilai 0 sampai 100` |
+| `0 <= Nilai <= 50` | `nilai <= 50` | Menampilkan animasi `Assets\tsukasa-dance.gif` pada `PictureBox` |
+| `51 <= Nilai <= 70` | `ElseIf nilai <= 70` | Menampilkan gambar `Assets\img1.png` pada `PictureBox` |
+| `71 <= Nilai <= 100` | `Else` | Menampilkan gambar `Assets\img2.png` pada `PictureBox` |
+
+---
+
+## 🚀 Alur Pengujian Aplikasi Pertemuan 3
+
+1. **Jalankan Aplikasi**: Tekan `F5` pada Visual Studio.
+2. **Uji Validasi Karakter**: Coba ketik huruf atau simbol pada kolom input nilai; input selain angka akan dicegah secara otomatis.
+3. **Uji Validasi Rentang**: Masukkan angka di luar rentang (misal `150`), klik tombol **Input**, sistem akan memunculkan dialog peringatan.
+4. **Uji Rentang 0 - 50**: Masukkan angka `45`, gambar animasi Tsukasa dance akan ditampilkan pada `PictureBox`.
+5. **Uji Rentang 51 - 70**: Masukkan angka `65`, gambar `img1.png` akan ditampilkan.
+6. **Uji Rentang 71 - 100**: Masukkan angka `90`, gambar `img2.png` akan ditampilkan.
+
+---
+
+# 📗 Pertemuan 4 - Struktur Perulangan (Looping)
+
+## 💡 Konsep Dasar Struktur Perulangan
+
+Dalam pemrograman, **struktur kendali perulangan (*looping / iteration*)** digunakan untuk mengeksekusi sekumpulan instruksi atau blok kode secara berulang-ulang berdasarkan kondisi tertentu atau rentang pencacah (*counter*) yang telah ditentukan.
+
+Pada Visual Basic .NET, beberapa struktur perulangan yang umum digunakan meliputi:
+1. **`For...Next`**: Digunakan ketika jumlah iterasi atau perulangan sudah diketahui secara pasti (berdasarkan nilai awal, nilai akhir, dan interval kenaikan/penurunan *step*).
+2. **`Do While / Do Until...Loop`**: Digunakan untuk perulangan dengan evaluasi kondisi di awal atau di akhir blok iterasi.
+3. **`While...End While`**: Digunakan untuk mengeksekusi blok kode selama kondisi bernilai benar (*True*).
+
+Pada praktikum Pertemuan 4 ini, fokus utama pembelajaran adalah penerapan **`For...Next` dengan interval `Step` negatif (perulangan mundur)** serta integrasi data visual dengan kontrol **`ListBox`**.
+
+---
+
+## 🛠️ Komponen Visual yang Digunakan (Pertemuan 4)
+
+Antarmuka form dirancang pada `frmPerulangan` menggunakan komponen-komponen Windows Forms berikut:
+
+| Komponen | Nama Variabel (*Name*) | Teks / Properti | Fungsi & Peran |
+| :--- | :--- | :--- | :--- |
+| **Label** | `lblNilaiAwal` | `Nilai Awal :` | Label penunjuk untuk input batas awal perulangan. |
+| **Label** | `lblNilaiAkhir` | `Nilai Akhir :` | Label penunjuk untuk input batas akhir perulangan. |
+| **TextBox** | `txtNilaiAwal` | *(kosong)* | Kotak input teks untuk menerima nilai awal perulangan. |
+| **TextBox** | `txtNilaiAkhir` | *(kosong)* | Kotak input teks untuk menerima nilai akhir perulangan. |
+| **Button** | `btnInput` | `Input` | Tombol untuk memicu validasi dan mengeksekusi algoritma perulangan. |
+| **ListBox** | `lstHasil` | *(kosong)* | Komponen daftar visual untuk menampilkan seluruh deret angka hasil iterasi. |
+
+---
+
+## 🛡️ Validasi Input & KeyPress Event (Pertemuan 4)
+
+Sebelum perulangan diproses, program menerapkan dua lapis validasi untuk menjaga keabsahan data:
+
+1. **Pencegahan Karakter Non-Angka (`KeyPress`)**:
+   - Event `KeyPress` pada `txtNilaiAwal` dan `txtNilaiAkhir` memeriksa setiap tombol yang ditekan. Karakter selain digit angka atau tombol kontrol (seperti *Backspace*) akan diabaikan (`e.Handled = True`).
+   ```vb
+   If Not Char.IsControl(e.KeyChar) AndAlso Not Char.IsDigit(e.KeyChar) Then
+       e.Handled = True
+   End If
+   ```
+
+2. **Validasi Parsing Numerik (`Integer.TryParse`)**:
+   - Memastikan teks yang dimasukkan dapat dikonversi ke tipe bilangan bulat (`Integer`).
+   - Apabila input kosong atau tidak valid, program menampilkan kotak dialog peringatan `"Masukkan dalam bentuk angka"`, mengarahkan fokus ke kontrol terkait dengan `.Focus()`, lalu menghentikan prosedur menggunakan perintah `Return`.
+
+---
+
+## 💻 Implementasi Kode Program (`frmPerulangan.vb`)
+
+Berikut adalah kode sumber lengkap yang diimplementasikan pada `frmPerulangan.vb`:
+
+```vb
+Public Class frmPerulangan
+    Private Sub txtNilaiAwal_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtNilaiAwal.KeyPress
+        If Not Char.IsControl(e.KeyChar) AndAlso Not Char.IsDigit(e.KeyChar) Then
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub txtNilaiAkhir_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtNilaiAkhir.KeyPress
+        If Not Char.IsControl(e.KeyChar) AndAlso Not Char.IsDigit(e.KeyChar) Then
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub btnInput_Click(sender As Object, e As EventArgs) Handles btnInput.Click
+        Dim nilaiAwal As Integer
+        Dim nilaiAkhir As Integer
+
+        If Not Integer.TryParse(txtNilaiAwal.Text, nilaiAwal) Then
+            MessageBox.Show("Masukkan dalam bentuk angka")
+            txtNilaiAwal.Focus()
+            Return
+        End If
+
+        If Not Integer.TryParse(txtNilaiAkhir.Text, nilaiAkhir) Then
+            MessageBox.Show("Masukkan dalam bentuk angka")
+            txtNilaiAkhir.Focus()
+            Return
+        End If
+
+        lstHasil.Items.Clear()
+
+        For i As Integer = nilaiAwal To nilaiAkhir Step -2
+            lstHasil.Items.Add(i)
+        Next
+
+    End Sub
+
+End Class
+```
+
+---
+
+## 🔍 Penjelasan Logika Perulangan For...Next & Step
+
+### 1. Mengosongkan ListBox (`lstHasil.Items.Clear()`)
+```vb
+lstHasil.Items.Clear()
+```
+Sebelum memulai perulangan baru, method `.Clear()` pada koleksi `Items` dipanggil. Tujuannya adalah menghapus hasil perhitungan sebelumnya agar data pada `ListBox` tidak menumpuk saat tombol **Input** diklik berulang kali.
+
+### 2. Struktur `For...Next` dengan `Step` Negatif
+```vb
+For i As Integer = nilaiAwal To nilaiAkhir Step -2
+    lstHasil.Items.Add(i)
+Next
+```
+* **`For i As Integer = nilaiAwal`**: Mendeklarasikan variabel pencacah iterasi `i` bertipe data `Integer` yang dimulai dari nilai `nilaiAwal`.
+* **`To nilaiAkhir`**: Menentukan batas akhir perulangan.
+* **`Step -2`**: Menentukan interval perubahan nilai pencacah di setiap siklus:
+  - Tanpa parameter `Step`, nilai pencacah bertambah `+1` secara default (*increment*).
+  - Dengan `Step -2`, nilai pencacah akan berkurang 2 di setiap putaran iterasi (*decrementing loop*).
+  - **Contoh Kasus**: Jika `nilaiAwal = 20` dan `nilaiAkhir = 10`, maka urutan nilai `i` yang dihasilkan adalah:
+    $$\text{20, 18, 16, 14, 12, 10}$$
+* **`lstHasil.Items.Add(i)`**: Menambahkan nilai variabel `i` saat iterasi berjalan ke dalam daftar tampilan komponen `ListBox`.
+* **`Next`**: Melanjutkan ke iterasi perulangan berikutnya atau keluar jika kondisi batas akhir telah terlampaui.
+
+---
+
+## 🚀 Alur Pengujian Aplikasi Pertemuan 4
+
+1. **Jalankan Aplikasi**: Tekan `F5` atau klik tombol **Start** pada Visual Studio.
+2. **Uji Validasi Input Teks**:
+   - Coba ketikkan huruf atau simbol pada kotak `Nilai Awal` atau `Nilai Akhir`. Sistem akan menolak karakter selain angka secara otomatis.
+3. **Uji Validasi Input Kosong**:
+   - Biarkan salah satu kotak teks kosong lalu klik tombol **Input**. Muncul kotak dialog peringatan: `"Masukkan dalam bentuk angka"`.
+4. **Uji Perulangan Mundur (Step -2)**:
+   - Masukkan `Nilai Awal: 20`
+   - Masukkan `Nilai Akhir: 10`
+   - Klik tombol **Input**.
+   - Pada komponen `lstHasil` (ListBox) akan muncul deret angka menurun:
+     ```text
+     20
+     18
+     16
+     14
+     12
+     10
+     ```
+5. **Uji Reset / Pembersihan ListBox**:
+   - Ubah nilai input, misalnya `Nilai Awal: 14` dan `Nilai Akhir: 4`.
+   - Klik tombol **Input**, amati bahwa data lama (20 s/d 10) dibersihkan secara otomatis dan digantikan oleh deret angka baru (14, 12, 10, 8, 6, 4).
+
+---
+
+# 📒 Pertemuan 5 - Array dan Modul (Module)
+
+## 💡 Konsep Dasar Module, Sub, dan Function
+
+Pada pertemuan ini, dipelajari mengenai modularisasi program menggunakan **Module** serta implementasi **Sub** dan **Function** di Visual Basic .NET:
+
+1. **Module (`Module ... End Module`)**  
+   File kode terpisah yang berfungsi sebagai kontainer untuk mendefinisikan variabel global, konstanta, fungsi, dan prosedur. Semua elemen yang dideklarasikan dengan akses `Public` di dalam Module dapat diakses secara langsung dari form mana pun di dalam proyek tanpa memerlukan proses instansiasi objek (`New`).
+
+2. **Sub (Subroutine / Prosedur)**  
+   Blok kode instruksi yang menjalankan serangkaian aksi atau perintah tertentu **tanpa menghasilkan nilai kembalian (*return value*)**.
+   Contoh pada `ModArray1.vb`:
+   ```vb
+   Public Sub TampilkanPesan(nama As String)
+       MessageBox.Show("Halo" & nama)
+   End Sub
+   ```
+
+3. **Function (Fungsi)**  
+   Blok kode prosedur yang memproses data masukan (parameter) dan **mengembalikan suatu nilai (*return value*)** dengan tipe data tertentu ke pemanggilnya menggunakan kata kunci `Return`.
+   Contoh fungsi kalkulasi bersyarat pada `ModArray1.vb`:
+   ```vb
+   Function hitung(panjang As Integer, lebar As Integer) As Integer
+       If panjang > 50 Then
+           Return panjang * lebar            ' Menghitung Luas jika panjang > 50
+       Else
+           Return 2 * panjang + 2 * lebar    ' Menghitung Keliling jika panjang <= 50
+       End If
+   End Function
+   ```
+
+---
+
+## 🗃️ Konsep Array 1 Dimensi & 2 Dimensi
+
+**Array** adalah struktur data terstruktur yang digunakan untuk menyimpan kumpulan nilai dengan tipe data yang sama dalam satu variabel referensi. Setiap elemen diakses melalui indeks berbasis nol (*zero-based index*).
+
+### 1. Array Satu Dimensi (1D Array)
+Struktur data berderet linear satu baris nilai.
+```vb
+Public nilai() As Integer = {50, 60, 70, 80, 90, 100}
+```
+* **Banyak Elemen**: 6 elemen (diperoleh dengan properti `.Length`).
+* **Rentang Indeks**: `0` hingga `nilai.Length - 1` (yaitu `0` sampai `5`).
+* **Akses Elemen**: `nilai(0) = 50`, `nilai(1) = 60`, `nilai(5) = 100`.
+
+### 2. Array Dua Dimensi (2D Array / Matriks)
+Struktur data berbentuk tabel berdimensi ganda yang memiliki baris dan kolom `(baris, kolom)`.
+```vb
+Public nilai2d(,) As Integer = {
+    {55, 53, 65},
+    {70, 72, 78},
+    {80, 85, 90}
+}
+```
+
+Tabel visualisasi representasi indeks matriks `nilai2d`:
+
+| Baris \ Kolom | Kolom 0 (`Index 0`) | Kolom 1 (`Index 1`) | Kolom 2 (`Index 2`) |
+| :--- | :---: | :---: | :---: |
+| **Baris 0 (`Index 0`)** | `55` | `53` | `65` |
+| **Baris 1 (`Index 1`)** | `70` | `72` | **`78`** |
+| **Baris 2 (`Index 2`)** | `80` | `85` | `90` |
+
+* Akses elemen `nilai2d(1, 2)` merujuk ke elemen pada **Baris indeks 1** dan **Kolom indeks 2**, yaitu bernilai **`78`**.
+
+---
+
+## 🛠️ Komponen Visual yang Digunakan (Pertemuan 5)
+
+Antarmuka form dirancang pada `FrmArray` menggunakan kontrol-kontrol Windows Forms berikut:
+
+| Komponen | Nama Variabel (*Name*) | Teks / Label | Fungsi & Peran |
+| :--- | :--- | :--- | :--- |
+| **Label** | `lblPanjang` | `Panjang :` | Keterangan teks untuk kotak input panjang. |
+| **TextBox** | `txtPanjang` | *(kosong)* | Kotak input teks untuk memasukkan nilai dimensi panjang. |
+| **Label** | `lblLebar` | `Lebar :` | Keterangan teks untuk kotak input lebar. |
+| **TextBox** | `txtLebar` | *(kosong)* | Kotak input teks untuk memasukkan nilai dimensi lebar. |
+| **Button** | `btnTampil` | `Tampilkan` | Tombol pemicu untuk mengeksekusi fungsi atau menampilkan data array. |
+| **ListBox** | `lsbArray` | *(kosong)* | Komponen daftar (*list*) untuk menampung dan menampilkan kumpulan elemen array. |
+
+---
+
+## 💻 Implementasi Kode Program (Pertemuan 5)
+
+### 1. Berkas Modul (`ModArray1.vb`)
+```vb
+Module ModArray1
+    Public Sub TampilkanPesan(nama As String)
+        MessageBox.Show("Halo" & nama)
+    End Sub
+
+    Function hitung(panjang As Integer, lebar As Integer) As Integer
+        If panjang > 50 Then
+            Return panjang * lebar
+        Else
+            Return 2 * panjang + 2 * lebar
+        End If
+    End Function
+
+    Public nilai() As Integer = {50, 60, 70, 80, 90, 100}
+    Public nilai2d(,) As Integer = {
+        {55, 53, 65},
+        {70, 72, 78},
+        {80, 85, 90}
+    }
+End Module
+```
+
+### 2. Berkas Form (`FrmArray.vb`)
+```vb
+Public Class FrmArray
+    Private Sub btnTampil_Click(sender As Object, e As EventArgs) Handles btnTampil.Click
+        ' Opsi 1: Memanggil fungsi hitung dari modul dengan parameter input TextBox
+        ' MessageBox.Show("Hasilnya adalah " & hitung(txtPanjang.Text, txtLebar.Text))
+
+        ' Opsi 2: Menampilkan elemen indeks ke-1 dari array 1D
+        ' MessageBox.Show(nilai(1))
+
+        ' Opsi 3: Melakukan iterasi dan menampilkan seluruh elemen array 1D ke ListBox
+        ' For i As Integer = 0 To nilai.Length - 1
+        '     lsbArray.Items.Add(nilai(i))
+        ' Next
+
+        ' Opsi 4: Menampilkan elemen array 2 dimensi (baris 1, kolom 2)
+        MessageBox.Show("Nilai :" & nilai2d(1, 2))
+    End Sub
+
+End Class
+```
+
+---
+
+## 🔍 Penjelasan Logika & Pemanggilan Data
+
+### 1. Pemanggilan Prosedur & Fungsi Modul
+* Karena `ModArray1` bersifat publik di dalam project, prosedur `TampilkanPesan(" Nama")` maupun fungsi `hitung(p, l)` dapat langsung dipanggil tanpa instansiasi objek.
+* Pada fungsi `hitung`:
+  - Jika nilai `panjang > 50`, dieksekusi rumus luas: `panjang * lebar`.
+  - Jika nilai `panjang <= 50`, dieksekusi rumus keliling: `2 * panjang + 2 * lebar`.
+
+### 2. Iterasi Menampilkan Array ke ListBox
+```vb
+For i As Integer = 0 To nilai.Length - 1
+    lsbArray.Items.Add(nilai(i))
+Next
+```
+* Perulangan dimulai dari indeks awal `0` hingga batas atas indeks `nilai.Length - 1` (yaitu `5`).
+* Pada setiap perputaran, instruksi `lsbArray.Items.Add(nilai(i))` menambahkan satu per satu angka (`50, 60, 70, 80, 90, 100`) ke dalam kontrol `ListBox`.
+
+### 3. Akses Elemen Array Multidimensi
+```vb
+MessageBox.Show("Nilai :" & nilai2d(1, 2))
+```
+* Mengakses koordinat matriks baris indeks ke-1 dan kolom indeks ke-2 pada array `nilai2d`, menghasilkan pesan dialog teks `"Nilai :78"`.
+
+---
+
+## 🚀 Alur Pengujian Aplikasi Pertemuan 5
+
+1. **Jalankan Aplikasi**: Tekan `F5` atau tombol **Start** pada Visual Studio.
+2. **Uji Array 2 Dimensi (Default)**:
+   - Klik tombol **Tampilkan**.
+   - Muncul kotak dialog `MessageBox` dengan teks **`Nilai :78`**, yang membuktikan elemen matriks `nilai2d(1, 2)` terbaca dengan tepat dari modul.
+3. **Uji Penampilan Seluruh Array ke ListBox** *(saat loop diaktifkan)*:
+   - Aktifkan blok perulangan `For...Next` pada `FrmArray.vb` dan klik tombol **Tampilkan**.
+   - Komponen `lsbArray` akan terisi deret angka: `50`, `60`, `70`, `80`, `90`, `100`.
+4. **Uji Fungsi Bersyarat `hitung`** *(saat baris pemanggilan fungsi diaktifkan)*:
+   - Masukkan `Panjang: 60`, `Lebar: 10` $\rightarrow$ Karena panjang > 50, muncul pesan hasil: `"Hasilnya adalah 600"`.
+   - Masukkan `Panjang: 30`, `Lebar: 10` $\rightarrow$ Karena panjang $\le$ 50, muncul pesan hasil keliling: `"Hasilnya adalah 80"`.
+
+---
+
+# 🗄️ Pertemuan 6 - Koneksi Database PostgreSQL (Supabase) & CRUD Dasar
+
+## 💡 Konsep Arsitektur Modular Database
+
+Pada praktikum **Pertemuan 6**, dipelajari cara menghubungkan aplikasi Windows Forms VB.NET dengan database relasional berbasis cloud (**PostgreSQL di Supabase**) menggunakan pustaka (*library*) **Npgsql** serta pola pemisahan tanggung jawab (*Separation of Concerns*) melalui struktur multi-modul:
+
+1. **`ModDatabase.vb` (Konfigurasi & Koneksi Dasar)**  
+   Bertanggung jawab membaca berkas konfigurasi `appsettings.json` secara dinamis dan menyediakan koneksi (*connection string*) ke database.
+2. **`ModFunction.vb` (Data Access Layer / Helper Eksekusi)**  
+   Menyediakan fungsi umum (*generic database helper*) untuk mengeksekusi perintah SQL non-query (`EksekusiData`) dan membaca data ke dalam `DataTable` (`AmbilData`).
+3. **`ModQuery.vb` (Business Query Layer)**  
+   Menyimpan logika dan sintaks kueri SQL spesifik entitas, seperti penambahan data (`TambahData`) dan pengambilan data tabel (`TampilkanData`).
+4. **`Form1.vb` (User Interface Layer)**  
+   Menangani interaksi pengguna, validasi input form, serta menampilkan data pada komponen `DataGridView`.
+
+---
+
+## 🔐 Manajemen Konfigurasi & Keamanan Kredensial
+
+Untuk menjaga keamanan kredensial dan kata sandi database (*password*) agar tidak bocor ke repositori publik (GitHub):
+
+1. **File `appsettings.json` (Lokal & Terlindungi)**  
+   Menyimpan connection string aktual beserta password Supabase. Berkas ini dimasukkan ke dalam `.gitignore` sehingga **tidak akan pernah terunggah atau ter-commit ke Git**.
+2. **File `appsettings.example.json` (Template Publik)**  
+   Disediakan sebagai berkas contoh bagi pengembang lain dengan parameter placeholder:
+   ```json
+   {
+     "ConnectionStrings": {
+       "DefaultConnection": "Host=YOUR_SUPABASE_HOST.pooler.supabase.com;Port=5432;Database=postgres;Username=YOUR_USERNAME;Password=YOUR_PASSWORD;SSL Mode=Require;Trust Server Certificate=true"
+     }
+   }
+   ```
+3. **Konfigurasi Proyek (`Pertemuan6.vbproj`)**  
+   Pengaturan `CopyToOutputDirectory` diset ke `PreserveNewest` agar file konfigurasi disalin otomatis ke folder keluaran kompilasi (`bin/Debug/` atau `bin/Release/`).
+
+---
+
+## 🛠️ Komponen Visual yang Digunakan (Pertemuan 6)
+
+Antarmuka form dirancang pada `Form1` menggunakan kontrol-kontrol Windows Forms berikut:
+
+| Komponen | Nama Variabel (*Name*) | Teks / Properti | Fungsi & Peran |
+| :--- | :--- | :--- | :--- |
+| **DataGridView** | `dgvMahasiswa` | *(Tabel Grid)* | Menampilkan kumpulan rekod data tabel mahasiswa dari database. |
+| **Button** | `btnTampilkan` | `Tampilkan` | Memicu pengambilan data dari database dan mengisi `dgvMahasiswa`. |
+| **TextBox** | `txtNim` | *(kosong)* | Kotak input teks untuk Nomor Induk Mahasiswa (NIM). |
+| **TextBox** | `txtNama` | *(kosong)* | Kotak input teks untuk Nama Mahasiswa. |
+| **TextBox** | `txtJurusan` | *(kosong)* | Kotak input teks untuk Program Studi / Jurusan. |
+| **Label** | `lblNim`, `lblNama`, `lblJurusan` | `NIM`, `Nama`, `Jurusan` | Petunjuk label teks untuk masing-masing field input. |
+| **Button** | `btnTambah` | `Tambah` | Tombol untuk menyimpan data mahasiswa baru ke database. |
+
+---
+
+## 💻 Implementasi Kode Program (Pertemuan 6)
+
+### 1. Modul Koneksi Database (`ModDatabase.vb`)
+```vb
+Imports Microsoft.Extensions.Configuration
+Imports Npgsql
+
+Module ModDatabase
+    Public Function GetConnectionString() As String
+        Dim config As IConfiguration =
+            New ConfigurationBuilder() _
+            .SetBasePath(AppContext.BaseDirectory) _
+            .AddJsonFile("appsettings.json", optional:=False, reloadOnChange:=True) _
+            .Build()
+
+        Return config.GetConnectionString("DefaultConnection")
+    End Function
+
+    Public Sub DatabaseKoneksi()
+        Try
+            Using conn As New NpgsqlConnection(GetConnectionString)
+                conn.Open()
+                MessageBox.Show("Koneksi database berhasil")
+            End Using
+        Catch ex As Exception
+            MessageBox.Show("Koneksi database gagal" & vbCrLf & ex.Message & "database")
+        End Try
+    End Sub
+End Module
+```
+
+### 2. Modul Eksekusi Data (`ModFunction.vb`)
+```vb
+Imports Npgsql
+Imports System.Data
+
+Module ModFunction
+    Public Function AmbilData(query As String) As DataTable
+        Dim dt As New DataTable
+
+        Try
+            Using conn As New NpgsqlConnection(ModDatabase.GetConnectionString())
+                conn.Open()
+                Using cmd As New NpgsqlCommand(query, conn)
+                    Using adapter As New NpgsqlDataAdapter(cmd)
+                        adapter.Fill(dt)
+                    End Using
+                End Using
+            End Using
+        Catch ex As Exception
+            MessageBox.Show("Gagal mengambil data" & vbCrLf & ex.Message, " database")
+        End Try
+
+        Return dt
+    End Function
+
+    Public Function EksekusiData(query As String, parameters As Dictionary(Of String, Object)) As Boolean
+        Try
+            Using conn As New NpgsqlConnection(ModDatabase.GetConnectionString())
+                conn.Open()
+                Using cmd As New NpgsqlCommand(query, conn)
+                    For Each parameter In parameters
+                        cmd.Parameters.AddWithValue(parameter.Key, parameter.Value)
+                    Next
+                    cmd.ExecuteNonQuery()
+                    Return True
+                End Using
+            End Using
+        Catch ex As Exception
+            MessageBox.Show("Gagal mengeksekusi data:" & vbCrLf & ex.Message, "Error Database")
+            Return False
+        End Try
+    End Function
+End Module
+```
+
+### 3. Modul Kueri Entitas Mahasiswa (`ModQuery.vb`)
+```vb
+Imports System.Data
+
+Module ModQuery
+    Public Function TambahData(nim As String, nama As String, jurusan As String) As Boolean
+        Dim query As String =
+            "INSERT INTO mahasiswa (nim, nama, jurusan) " &
+            "VALUES (@nim, @nama, @jurusan)"
+
+        Dim parameters As New Dictionary(Of String, Object) From {
+            {"@nim", nim},
+            {"@nama", nama},
+            {"@jurusan", jurusan}
+        }
+        Return ModFunction.EksekusiData(query, parameters)
+    End Function
+
+    Public Function TampilkanData() As DataTable
+        Return ModFunction.AmbilData("SELECT * FROM mahasiswa ORDER BY id ASC")
+    End Function
+End Module
+```
+
+### 4. Kode Form Antarmuka (`Form1.vb`)
+```vb
+Public Class Form1
+    Private Sub btnTampilkan_Click(sender As Object, e As EventArgs) Handles btnTampilkan.Click
+        dgvMahasiswa.AutoGenerateColumns = True
+        dgvMahasiswa.DataSource = ModQuery.TampilkanData()
+    End Sub
+
+    Private Sub btnTambah_Click(sender As Object, e As EventArgs) Handles btnTambah.Click
+        If ModQuery.TambahData(txtNim.Text, txtNama.Text, txtJurusan.Text) Then
+            MessageBox.Show("Data berhasil disimpan")
+        End If
+        txtJurusan.Clear()
+        txtNama.Clear()
+        txtNim.Clear()
+    End Sub
+
+    Private Sub txtNim_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtNim.KeyPress
+        If Not Char.IsDigit(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) Then
+            e.Handled = True
+        End If
+    End Sub
+End Class
+```
+
+---
+
+## 🔍 Penjelasan Alur Kerja Query & Eksekusi Data
+
+### 1. Keamanan Query dengan Parameterized SQL
+Pada `ModQuery.TambahData`, query `INSERT` tidak menggabungkan teks langsung secara rentan (*string concatenation*), melainkan menggunakan parameter `@nim`, `@nama`, dan `@jurusan`:
+```vb
+cmd.Parameters.AddWithValue(parameter.Key, parameter.Value)
+```
+Metode ini secara otomatis memitigasi celah keamanan berbahaya **SQL Injection**.
+
+### 2. Pengelolaan Sumber Daya dengan Blok `Using`
+Semua objek koneksi (`NpgsqlConnection`), perintah (`NpgsqlCommand`), dan adapter (`NpgsqlDataAdapter`) dibungkus dalam blok `Using ... End Using`. Hal ini menjamin koneksi database selalu ditutup dan dibebaskan dari memori (*disposed*) secara otomatis meskipun terjadi kesalahan (*exception*).
+
+### 3. Validasi Karakter pada Form Input
+Event `txtNim_KeyPress` memastikan hanya karakter numerik yang dapat diketik pada input NIM:
+```vb
+If Not Char.IsDigit(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) Then
+    e.Handled = True
+End If
+```
+
+---
+
+## 🚀 Alur Pengujian Aplikasi Pertemuan 6
+
+1. **Persiapan Database**:
+   - Pastikan tabel `mahasiswa` sudah dibuat pada Supabase PostgreSQL:
+     ```sql
+     CREATE TABLE mahasiswa (
+         id SERIAL PRIMARY KEY,
+         nim VARCHAR(20) NOT NULL,
+         nama VARCHAR(100) NOT NULL,
+         jurusan VARCHAR(100) NOT NULL
+     );
+     ```
+2. **Jalankan Aplikasi**: Tekan `F5` pada Visual Studio.
+3. **Uji Pengambilan Data (`Tampilkan`)**:
+   - Klik tombol **Tampilkan**.
+   - `dgvMahasiswa` akan menampilkan seluruh baris data dari database Supabase secara otomatis.
+4. **Uji Validasi Input NIM**:
+   - Ketik huruf pada input `NIM`; karakter huruf akan ditolak otomatis oleh sistem.
+5. **Uji Tambah Data Baru**:
+   - Isikan `NIM: 231401001`, `Nama: Budi`, `Jurusan: Teknologi Informasi`.
+   - Klik tombol **Tambah**.
+   - Muncul dialog konfirmasi: `"Data berhasil disimpan"`, dan seluruh kotak input dibersihkan secara otomatis.
+   - Klik tombol **Tampilkan** untuk memverifikasi data baru telah masuk ke dalam `DataGridView`.
+
+---
+
+<div align="center">
+  <p>📚 <i>Repositori ini akan terus diperbarui secara berkala sesuai dengan perkembangan materi perkuliahan Pemrograman Visual — D3 Teknik Informatika USU.</i></p>
+</div>
